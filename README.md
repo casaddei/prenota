@@ -1,4 +1,4 @@
-Progetto model view controller (mvc) creato da cmd
+Progetto model view controller (mvc) creato da cmd.
 sito asp.net che prevede la registrazione di un utente tramite una form che chiede l'inserimento di alcuni dati tra cui Id, Nome, Cognome,Enail, Città, Tipo.
 Per realizare abbiamo creato all' interno della cartella Models un file Utente.cs in cui vengono richiesti i campi.
 Nella cartella Controller troviamo un file HomeController.cs in cui sono specificate le Action che ci permettono di ritornare una view.
@@ -19,4 +19,5 @@ Vanno aggiunti i tool necessari.
     dotnet tool update --global dotnet-ef // per aggiornare i tool
 
 infine si verifica che i tool siano installati vedendo il logo di ef. 
-    dotnet-ef
+    
+    dotnet-ef // dovrebbe comparire il logo di ef e l' unicorno
