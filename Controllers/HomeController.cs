@@ -25,9 +25,16 @@ public class HomeController : Controller
         return View();
     }
 
+
+    public IActionResult Città()
+    {
+        return View();
+    }
+
     [HttpPost]
     public IActionResult Prenotato(Utente u)
     {
+        Database db=new Database();
         Utenti.Add(u);
         return View( Utenti );
     }
