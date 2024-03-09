@@ -21,7 +21,3 @@ Vanno aggiunti i tool necessari.
 infine si verifica che i tool siano installati vedendo il logo di ef. 
     
     dotnet-ef // dovrebbe comparire il logo di ef e l' unicorno
-
-Si crea il database, dopo  aver definito il database in database.cs, si eseguoni i seguenti comandi:
-- dotnet ef migrations add "Primaversionedeldb"
-- dotnet ef database update 

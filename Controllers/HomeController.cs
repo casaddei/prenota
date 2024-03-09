@@ -36,7 +36,8 @@ public class HomeController : Controller
         Database db=new ();
         db.Utenti.Add(u);
         db.SaveChanges();
-        return View (db);
+        HttpContext.Session.SetString("NomeUtente", u.Nome); //settiamo una variabile di sessione chiamata Nomeutente con valore u.Nome
+        return View (u);
     }
 
 
@@ -47,6 +48,11 @@ public class HomeController : Controller
     }
     public IActionResult Prenotazioni()
     {
+        string? nomeUtente = HttpContext.Session.GetString("NomeUtente");
+        if (string.IsNullOrEmpty(nomeUtente))
+            return Redirect("\\home\\index");
+
+
         Database db2 = new();
         db2.SaveChanges();
         return View(db2);
