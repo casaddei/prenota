@@ -11,4 +11,5 @@ public class Database : DbContext
              => options.UseSqlite("Data Source=database.db");
 
      public DbSet<Utente> Utenti { get; set; }
+     public string? Nome {get;set;}
 }

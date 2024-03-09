@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Prenota.Models;
 
 namespace Prenota.Controllers;
@@ -32,10 +33,10 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult Prenotato(Utente u)
     {
-        Database db=new Database();
+        Database db=new ();
         db.Utenti.Add(u);
         db.SaveChanges();
-        return View (db );
+        return View (db);
     }
 
 
@@ -44,6 +45,13 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Prenotazioni()
+    {
+        Database db2 = new();
+        db2.SaveChanges();
+        return View(db2);
+    }
+
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
