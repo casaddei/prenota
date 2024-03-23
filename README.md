@@ -11,13 +11,22 @@ Verifichiamo la versione di dotnet installata tramite il comando dotnet --versio
     dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore  -v 7.0.0
     dotnet add package Microsoft.EntityFrameworkCore.Sqlite -v 7.0.0
     dotnet add package Microsoft.EntityFrameworkCore.Design -v 7.0.0
-
 Vanno aggiunti i tool necessari.
 
     dotnet tool search ef // per visualizzare i tool installati 
     dotnet ef --version // per la versione 
     dotnet tool update --global dotnet-ef // per aggiornare i tool
-
 infine si verifica che i tool siano installati vedendo il logo di ef. 
-    
+
     dotnet-ef // dovrebbe comparire il logo di ef e l' unicorno
+a questo punto dotnet ef migrations add "PrimaVersione del db" e poi dotnet ef database update  
+
+    per aggiungere le migrations e creare il database 
+
+Quando si effettua una prenotazione, si vedono i dati salvati nel database; eliminiamo allora la visualzzazione del db.
+Nel layout aggiungiamo un altro pulsante Prenotazioni che si rifà all' action Prenotazioni su cui è istanziato il database e 
+ne ritorna la view.
+Per evitare che si possa accedere direttamente al database, aggiungiamo le sessioni per effettuare il login. 
+
+
+
